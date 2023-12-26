@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+
+    --text-color: #ffffff;
+
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(28, 148, 218);
+    height: 100px;
+
+    box-shadow: 5px 5px 5px -2px gray;
+}
+
+.header-heading {
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.main-container {
+    display: flex;
+    background-color: green;
+}
+
+.add-book-container {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    background-color: red;
+}
+
+.add-book-heading {
+
+    align-self: center;
+}
+
+
+form {
+    width: 100%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border: 2px solid green;
+    gap: 15px;
+    padding: 15px;
+}
+
+.added-books-container {
+    display: flex;
+    justify-content: center;
+    flex: 2;
+    width: 100%;
+    height: 100vh;
+    background-color: orange;
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.book-wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.book-wrapper > p {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.book-status {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* inputs style */
+
+.book-wrapper > p > label {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--text-color);
+
+    letter-spacing: 1px;
+}
+.book-wrapper > p > input {
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+.book-wrapper > button {
+    align-self: center;
+    width: 50%;
+    padding: 5px;
+    
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.add-book {
+    font-size: 50px;
+    color: #463e3e;
+    cursor: pointer;
+    
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="library.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.3.67/css/materialdesignicons.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <span><p class="header-heading">Book Library</p></span>
+    </header>
+
+    <div class="main-container">
+        <div class="add-book-container">
+
+            <div class="form-container">
+                <h1 class="add-book-heading">Add book</h1>
+                <div><span class="mdi mdi-plus-box add-book"></span></div>
+                <form action="">
+                    <fieldset>
+                        <legend>Add new book to library</legend>
+                        <div class="book-wrapper">
+
+                            <p>
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name">
+                            </p>
+
+                            <p>
+                                <label for="author">Author</label>
+                                <input type="text" name="author" id="author">
+                            </p>
+
+                            <p>
+                                <label for="pages">Pages</label>
+                                <input type="number" name="pages" id="pages">
+                            </p>
+                        
+                            <div class="book-status">
+                                <p>Did you read it?</p>
+                                <input type="radio" id="readed" name="status" value="true">
+                                <label for="readed">Yes</label>
+                                <input type="radio" id="notReaded" name="status" value="false">
+                                <label for="notReaded">No</label>
+                            </div>
+
+                            <button type="submit">Add book</button>            
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="added-books-container">
+            <h2>Added books</h2>
+        </div>
+    </div>
+    
+</body>
+</html>
