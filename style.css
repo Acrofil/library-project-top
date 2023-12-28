@@ -9,25 +9,41 @@ html {
 }
 
 :root {
-
+    --main-bg-color: rgb(21, 21, 21);
+    --elements-main-bg-color: rgb(44, 43, 43);
+    --inputs-color: #463e3e;
     --text-color: #ffffff;
+    --main-cta-color: rgba(240, 34, 34, 0.774); 
+    --main-cta-color-hover: rgba(240, 34, 34, 0.903);
 
 }
 
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    padding: 25px;
+    gap: 25px;
 
-    background-color: rgb(28, 148, 218);
-    height: 100px;
+    background-color: var(--main-bg-color);
+    height: 150px;
 
-    box-shadow: 5px 5px 5px -2px gray;
+    border-bottom: 1px solid var(--inputs-color);
 }
 
 .header-heading {
+    justify-self: center;
+    font-weight: 900;
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 40px;
+
+    color: rgb(28, 148, 218);
+}
+
+.logo {
+    justify-self: flex-start;
+    width: 72px;
 }
 
 .main-container {
@@ -38,23 +54,23 @@ html {
     display: flex;
     justify-content: center;
     flex: 1;
-    background-color: red;
 }
 
 .add-book-heading {
+    color: var(--text-color);
     align-self: center;
 }
 
 form {
     width: 100%;
-    background-color: rgb(44, 43, 43);
+    background-color: var(--elements-main-bg-color);
     border-radius: 5px;
     padding: 10px;
     transition: all 0.7s ease-in-out;
 }
 
 .form-container {
-    background-color: rgb(21, 21, 21);
+    background-color: var(--main-bg-color);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -66,11 +82,19 @@ form {
 
 .added-books-container {
     display: flex;
-    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
     flex: 2;
     width: 100%;
     height: 100vh;
-    background-color: orange;
+
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+
+    gap: 15px;
+    padding: 25px;
+    
 }
 
 h1,
@@ -148,9 +172,15 @@ legend {
 
 .add-book {
     font-size: 50px;
-    color: #463e3e;
+    color: var(--main-cta-color);
     cursor: pointer;
-    
+
+    transition: all 0.6s;
+}
+
+.add-book:hover {
+    color: var(--main-cta-color-hover);
+   
 }
 
 /* Buttons */
@@ -163,10 +193,61 @@ legend {
     border-radius: 5px;
 
     color: var(--text-color);
-    background-color: rgba(240, 34, 34, 0.774);
+    background-color: var(--main-cta-color);
+
+    transition: all 0.6s;
 }
 
 .add-book-btn:hover {
-    background-color: rgba(240, 34, 34, 0.903);    
+    background-color: var(--main-cta-color-hover);
+    transform: scale(1.1);
 
+}
+
+tr {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+tr > td {
+    padding: 10px 25px 10px 25px;
+    border: 1px solid black;
+}
+
+tr > th {
+    padding: 10px;
+}
+
+table {
+    
+    background-color: rgb(162, 162, 162);
+
+    border-radius: 5px;
+}
+
+th,
+td,
+tr {
+    background-color: var(--elements-main-bg-color);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+
+th {
+    font-weight: 700;
+    background-color: rgb(28, 148, 218);
+}
+
+tr > td:last-child {
+    text-align: center;
+}
+
+.mdi-delete {
+    cursor: pointer;
+    font-size: 32px;
+    color: var(--main-cta-color);
+}
+
+.mdi-delete:hover {
+    color: var(--main-cta-color-hover);
 }

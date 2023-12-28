@@ -12,7 +12,8 @@
 
     <!-- hEADER SECTION-->
     <header class="header">
-        <span><p class="header-heading">Book Library</p></span>
+        <img src="odin-lined.png" alt="" class="logo">
+        <span><p class="header-heading">"the odin project" Book Library</p></span>
     </header>
 
     <!-- Main container with add book form and added books table-->
@@ -58,6 +59,69 @@
         </div>
         <div class="added-books-container">
             <h2>Added books</h2>
+            <div><span class="mdi mdi-bookshelf add-book"></span></div>
+            <table>
+           
+                <thead>
+                    <tr>
+                        <th scope="col">Book Name</th>
+                        <th scope="col">Book Author</th>
+                        <th scope="col">Pages</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Change Status</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lord of the Rings</td>
+                        <td>J.R.R. Tolkien</td>
+                        <td>1000</td>
+                        <td>Not read</td>
+                        <td>
+                            <label for="change-status">Change to</label>
+                            <select name="change" id="change-status">
+                                <option value="">----------</option>
+                                <option value="read">Read</option>
+                                <option value="not read">Not Read</option>
+                            </select>
+                        </td>
+                        <td><span class="mdi mdi-delete"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Lord of the Rings</td>
+                        <td>J.R.R. Tolkien</td>
+                        <td>1000</td>
+                        <td>Not read</td>
+                        <td>
+                            <label for="change-status">Change to</label>
+                            <select name="change" id="change-status">
+                                <option value="">----------</option>
+                                <option value="read">Read</option>
+                                <option value="not read">Not Read</option>
+                            </select>
+                        </td>
+                        <td><span class="mdi mdi-delete"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Game Of Thrones</td>
+                        <td>J.R. Martin</td>
+                        <td>1000</td>
+                        <td>Not read</td>
+                        <td>
+                            <label for="change-status">Change to</label>
+                            <select name="change" id="change-status">
+                                <option value="">----------</option>
+                                <option value="read">Read</option>
+                                <option value="not read">Not Read</option>
+                            </select>
+                        </td>
+                        <td><span class="mdi mdi-delete"></span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     
