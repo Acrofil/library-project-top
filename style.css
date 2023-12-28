@@ -12,7 +12,8 @@ html {
     --main-bg-color: rgb(21, 21, 21);
     --elements-main-bg-color: rgb(44, 43, 43);
     --inputs-color: #463e3e;
-    --text-color: #ffffff;
+    --text-color: #bdb9b9;
+    --tect-color-bold: #ffffff;
     --main-cta-color: rgba(240, 34, 34, 0.774); 
     --main-cta-color-hover: rgba(240, 34, 34, 0.903);
 
@@ -78,6 +79,8 @@ form {
     width: 100%;
     gap: 15px;
     padding: 25px;
+
+    border-right: 1px solid var(--inputs-color);
 }
 
 .added-books-container {
@@ -192,7 +195,7 @@ legend {
     outline: none;
     border-radius: 5px;
 
-    color: var(--text-color);
+    color: var(--tect-color-bold);
     background-color: var(--main-cta-color);
 
     transition: all 0.6s;
@@ -215,6 +218,7 @@ tr > td {
 }
 
 tr > th {
+    color: var(--tect-color-bold);
     padding: 10px;
 }
 
