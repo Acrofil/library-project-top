@@ -66,7 +66,8 @@ myLibrary.forEach((book) => {
   optionNotRead.textContent = "Not read";
 
   let span = document.createElement("span");
-  span.className = "mdi mdi-delete";
+  span.className = "mdi mdi-delete delete-book";
+  span.setAttribute("value", `${myLibrary.length - 1}`);
 
   let tableDataName = document.createElement("td");
   tableDataName.textContent = book.name;
@@ -113,3 +114,16 @@ myLibrary.forEach((book) => {
 
 }
 
+
+const deleteBtn = document.querySelector(".delete-book");
+const myTable = document.querySelector("table");
+
+if (deleteBtn) {
+  deleteBtn.addEventListener("click", () => {
+
+   // myLibrary.splice(parseInt(deleteBookBtn.value, 1));
+    //myTable.deleteRow(parseInt(deleteBookBtn.value) + 1);
+    console.log("a");
+  });
+
+}
