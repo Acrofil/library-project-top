@@ -209,17 +209,17 @@ legend {
 
 tr {
     border: 1px solid black;
-    padding: 20px;
+    padding: 10px;
 }
 
 tr > td {
-    padding: 10px 25px 10px 25px;
+    padding: 5px;
     border: 1px solid black;
 }
 
 tr > th {
     color: var(--tect-color-bold);
-    padding: 10px;
+    padding: 5px;
 }
 
 table {
@@ -254,4 +254,24 @@ tr > td:last-child {
 
 .mdi-delete:hover {
     color: var(--main-cta-color-hover);
+}
+
+@media screen and (max-width: 800px) {
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .card {
+        margin-bottom: 25px;
+    }
+
+    .headings {
+        display: none;
+    }
+ 
 }
