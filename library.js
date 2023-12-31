@@ -15,154 +15,53 @@ function Book(name, author, pages, readStatus) {
 
   }
 
+/* validation */
+
+function checkLen(...arr) {
+
+  let valid = true;
+
+  arr.forEach((str) => {
+
+    if (str.length < 2) {
+
+      valid = false;
+    };
+
+  });
+
+  return valid;
+}
+
 /* Handle add book button clicks */
 
 const addBookBtn = document.querySelector(".add-book-btn");
 
 addBookBtn.addEventListener("click", (e) => {
 
+    let valid = false;
+
     let bookName = document.querySelector("#name").value;
     let bookAuthor = document.querySelector("#author").value;
     let bookPages = document.querySelector("#pages").value;
     let status = document.querySelector('input[name="status"]:checked').value;
 
-    addBookToLibrary(bookName, bookAuthor, bookPages, status);  
-    showAddedBooks();
+    valid = checkLen(bookName, bookAuthor, bookPages);
+
+    if (valid) {
+  
+      addBookToLibrary(bookName, bookAuthor, bookPages, status);  
+      showAddedBooks();
+    }
+ 
 
     e.preventDefault();
 });
 
 /* Handle displaying the added books */
 
-function tableHeadings() {
-
-  let tableHeads = document.querySelector(".headings");
-
-  let tableHeadName = document.createElement("th");
-  tableHeadName.textContent = "Name";
-
-  let tableHeadAuthor = document.createElement("th");
-  tableHeadAuthor.textContent = "Author";
-
-  let tableHeadPages = document.createElement("th");
-  tableHeadPages.textContent = "Pages";
-
-  let tableHeadStatus = document.createElement("th");
-  tableHeadStatus.textContent = "Status"
-
-  let tableHeadChangeStatus = document.createElement("th");
-  tableHeadChangeStatus.textContent = "Change Status";
-
-  let tableHeadDelete = document.createElement("th");
-  tableHeadDelete.textContent = "Delete";
-
-  tableHeads.appendChild(tableHeadName);
-  tableHeads.appendChild(tableHeadAuthor);
-  tableHeads.appendChild(tableHeadPages);
-  tableHeads.appendChild(tableHeadStatus);
-  tableHeads.appendChild(tableHeadChangeStatus);
-  tableHeads.appendChild(tableHeadDelete);
-}
-
 function showAddedBooks() {
 const tableBody = document.querySelector("tbody");
-
-if (window.innerWidth > 500) {
-  
-myLibrary.forEach((book) => {
-
-  if (!book.added) {
-    let tableRow = document.createElement("tr");
-
-    let tableDataChangeStatu = document.createElement("td");
-    let tableDataDeleteBook = document.createElement("td");
-
-    let label = document.createElement("label");
-    label.htmlFor = "change-status";
-    label.textContent = "Change to ";
-
-    let select = document.createElement("select");
-    select.setAttribute("name", "change");
-    select.setAttribute("id", "change-status");
-
-    let optionDefaut = document.createElement("option");
-    optionDefaut.setAttribute("value", "");
-    optionDefaut.textContent = "----------";
-
-    let optionRead = document.createElement("option");
-    optionRead.setAttribute("value", "Readed");
-    optionRead.textContent = "Readed";
-
-    let optionNotRead = document.createElement("option");
-    optionNotRead.setAttribute("value", "Not readed");
-    optionNotRead.textContent = "Not readed";
-
-    let span = document.createElement("span");
-    span.className = "mdi mdi-delete delete-book";
-    span.setAttribute("value", `${myLibrary.length - 1}`);
-
-    let tableDataName = document.createElement("td");
-    tableDataName.textContent = book.name;
-
-    let tableDataAuthor = document.createElement("td");
-    tableDataAuthor.textContent = book.author;
-
-    let tableDataPages = document.createElement("td");
-    tableDataPages.textContent = book.pages;
-
-    let tableDataStatus = document.createElement("td");
-    tableDataStatus.textContent = book.status;
-
-    if (select) {
-      select.addEventListener("change", () => {
-
-        book.status = select.value;
-        tableDataStatus.textContent = book.status;
-        
-      });
-    }
-
-
-
-    tableRow.appendChild(tableDataName);
-    tableRow.appendChild(tableDataAuthor);
-    tableRow.appendChild(tableDataPages);
-    tableRow.appendChild(tableDataStatus);
-    
-    tableDataChangeStatu.appendChild(label);
-    select.appendChild(optionDefaut);
-    select.appendChild(optionRead);
-    select.appendChild(optionNotRead);
-    tableDataChangeStatu.appendChild(select);
-
-    tableRow.appendChild(tableDataChangeStatu);
-
-    tableDataDeleteBook.appendChild(span);
-    tableRow.appendChild(tableDataDeleteBook);
-
-    tableBody.appendChild(tableRow);
-
-    if (span) {
-      span.addEventListener("click", () => {
-
-        if (confirm(`Are you sure you want to delete ${book.name}?`)) {
-          
-          myLibrary.splice(parseInt(span.value, 1));
-          tableBody.removeChild(tableRow);
-
-        }; 
-    });
-
-  };
-
-};
-
-
-  book.added = true;
-
-});
-
-} else if (window.innerWidth < 500) {
 
   myLibrary.forEach((book) => {
     
@@ -199,7 +98,6 @@ myLibrary.forEach((book) => {
 
     let tableHeadDelete = document.createElement("th");
     tableHeadDelete.textContent = "Delete";
-
 
     let tableDataChangeStatu = document.createElement("td");
 
@@ -302,13 +200,10 @@ myLibrary.forEach((book) => {
   };
 
       
-    };
+};
 
-
-  });
-
+ });
 }
-} 
 
 function populatePlaceholderBooks() {
 
@@ -336,16 +231,5 @@ function populatePlaceholderBooks() {
 }
 
 populatePlaceholderBooks();
-tableHeadings();
 showAddedBooks();
 
-
-let w = 0;
-  window.onload=function() {
-  w = window.innerWidth;
-
-}
-window.onresize = function(){ 
-if(window.innerWidth != w-1000) 
-location.reload();
-};

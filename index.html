@@ -23,28 +23,28 @@
             <div class="form-container">
                 <h1 class="add-book-heading">Add book</h1>
                 <div><span class="mdi mdi-plus-box add-book"></span></div>
-                <form action="">
+                <form action="" method="post">
                     <fieldset>
                         <legend>Add new book to library</legend>
                         <div class="book-wrapper">
 
                             <p>
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name">
+                                <input type="text" name="name" id="name" placeholder="The Silmarilion" minlength="2" maxlength="30" required>
                             </p>
 
                             <p>
                                 <label for="author">Author</label>
-                                <input type="text" name="author" id="author">
+                                <input type="text" name="author" id="author" placeholder="J.R.R. Tolkien">
                             </p>
 
                             <p>
                                 <label for="pages">Pages</label>
-                                <input type="number" name="pages" id="pages">
+                                <input type="number" name="pages" id="pages" placeholder="365">
                             </p>
                         
                             <div class="book-status">
-                                <p>Did you read it?</p>
+                                <p>Readed?</p>
                                 <input type="radio" id="readed" name="status" value="Readed">
                                 <label for="readed">Yes</label>
                                 <input type="radio" id="notReaded" name="status" value="Not readed">
@@ -60,19 +60,7 @@
         <div class="added-books-container">
             <h2>Added books</h2>
             <div><span class="mdi mdi-bookshelf add-book"></span></div>
-            <table>
-           
-                <thead>
-                    <tr class="headings">
-                
-                    
-                    </tr>
-                </thead>
-                <tbody>
 
-            
-                </tbody>
-            </table>
 
             <div class="cards">
                 
